@@ -1,0 +1,149 @@
+"use client";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { useRef } from "react";
+
+export default function ContactClient() {
+    const container = useRef<HTMLDivElement>(null);
+    const heroRef = useRef<HTMLElement>(null);
+    const formRef = useRef<HTMLDivElement>(null);
+    const infoRef = useRef<HTMLDivElement>(null);
+
+    useGSAP(
+        () => {
+            const tl = gsap.timeline();
+
+            // Hero Text Animation
+            tl.fromTo(
+                heroRef.current?.querySelectorAll("h1, p") || [],
+                { y: 50, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power4.out", delay: 0.2 }
+            );
+
+            // Info Panels Animation
+            tl.fromTo(
+                infoRef.current?.children || [],
+                { x: -50, opacity: 0 },
+                { x: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power3.out" },
+                "-=0.5"
+            );
+
+            // Form Entrance Animation
+            tl.fromTo(
+                formRef.current,
+                { y: 50, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1, ease: "power4.out" },
+                "-=0.6"
+            );
+        },
+        { scope: container }
+    );
+
+    return (
+        <div ref={container} className="min-h-screen bg-black text-white pt-32 md:pt-48 pb-24 px-6 md:px-12 relative overflow-hidden">
+
+            {/* Background Glow */}
+            <div className="absolute top-0 left-0 w-[50vw] h-[50vh] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none -z-10 mix-blend-screen" />
+
+            <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 md:gap-24 relative z-10">
+
+                {/* LEFT SIDE: Info */}
+                <div className="w-full md:w-1/2 flex flex-col justify-between">
+                    <section ref={heroRef} className="mb-16">
+                        <p className="text-neutral-500 uppercase tracking-[0.3em] text-xs mb-8">
+                            Get In Touch
+                        </p>
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-oswald font-bold uppercase tracking-tighter leading-[0.9] text-white">
+                            Let's Build <br /> Together.
+                        </h1>
+                        <p className="text-gray-400 text-lg md:text-xl mt-8 max-w-md leading-relaxed">
+                            Whether you have a specific project in mind, need a frontend expert, or just want to say hi, my inbox is always open.
+                        </p>
+                    </section>
+
+                    <div ref={infoRef} className="space-y-16 mt-12 md:mt-0">
+                        <div className="flex flex-col gap-3">
+                            <span className="text-xs md:text-sm uppercase tracking-widest text-neutral-500 font-bold">Email</span>
+                            <a href="mailto:harshdhruv099@gmail.com" className="text-xl md:text-3xl font-light hover:text-gray-300 transition-colors tracking-wide">
+                                harshdhruv099@gmail.com
+                            </a>
+                        </div>
+                        <div className="flex flex-col gap-3">
+                            <span className="text-xs md:text-sm uppercase tracking-widest text-neutral-500 font-bold">Phone</span>
+                            <a href="tel:+918076253102" className="text-xl md:text-3xl font-light hover:text-gray-300 transition-colors tracking-wide">
+                                +91 8076253102
+                            </a>
+                        </div>
+                        <div className="flex flex-col gap-3">
+                            <span className="text-xs md:text-sm uppercase tracking-widest text-neutral-500 font-bold">Location</span>
+                            <span className="text-xl md:text-3xl font-light tracking-wide">
+                                Ghaziabad, India
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                {/* RIGHT SIDE: Form */}
+                <div ref={formRef} className="w-full md:w-1/2 mt-16 md:mt-0">
+                    <form className="flex flex-col gap-10 bg-neutral-900/40 p-10 md:p-14 rounded-3xl border border-white/5 backdrop-blur-md">
+                        <div className="flex flex-col gap-3">
+                            <label className="text-xs md:text-sm uppercase tracking-widest text-white/70 font-bold pl-2">Name</label>
+                            <input
+                                type="text"
+                                placeholder="John Doe"
+                                className="bg-transparent border-b border-white/10 pb-5 pt-3 text-xl tracking-wide focus:outline-none focus:border-white transition-colors text-white placeholder:text-neutral-700"
+                            />
+                        </div>
+
+                        <div className="flex flex-col gap-3">
+                            <label className="text-xs md:text-sm uppercase tracking-widest text-white/70 font-bold pl-2">Email</label>
+                            <input
+                                type="email"
+                                placeholder="john@example.com"
+                                className="bg-transparent border-b border-white/10 pb-5 pt-3 text-xl tracking-wide focus:outline-none focus:border-white transition-colors text-white placeholder:text-neutral-700"
+                            />
+                        </div>
+
+                        <div className="flex flex-col gap-3">
+                            <label className="text-xs md:text-sm uppercase tracking-widest text-white/70 font-bold pl-2">Subject</label>
+                            <input
+                                type="text"
+                                placeholder="Website Redesign"
+                                className="bg-transparent border-b border-white/10 pb-5 pt-3 text-xl tracking-wide focus:outline-none focus:border-white transition-colors text-white placeholder:text-neutral-700"
+                            />
+                        </div>
+
+                        <div className="flex flex-col gap-3">
+                            <label className="text-xs md:text-sm uppercase tracking-widest text-white/70 font-bold pl-2">Message</label>
+                            <textarea
+                                rows={4}
+                                placeholder="Tell me about your project..."
+                                className="bg-transparent border-b border-white/10 pb-5 pt-3 text-xl tracking-wide focus:outline-none focus:border-white transition-colors text-white placeholder:text-neutral-700 resize-none leading-relaxed"
+                            />
+                        </div>
+
+                        <button
+                            type="button"
+                            className="mt-8 group relative inline-flex items-center gap-4 px-8 py-5 bg-white text-black rounded-full font-bold uppercase tracking-widest text-xs hover:bg-gray-200 transition-colors self-start overflow-hidden"
+                        >
+                            <div className="relative overflow-hidden leading-none h-[1em]">
+                                <span className="block transition-transform duration-300 group-hover:-translate-y-[150%]">
+                                    Send Message
+                                </span>
+                                <span className="absolute top-0 left-0 block translate-y-[150%] transition-transform duration-300 group-hover:translate-y-0">
+                                    Send Message
+                                </span>
+                            </div>
+                            <div className="relative z-10 w-8 h-8 rounded-full bg-black flex items-center justify-center group-hover:rotate-45 transition-transform duration-300 ml-4">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </div>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    );
+}
