@@ -1,2 +1,0 @@
-[00:00:03.136] Server  LOG      ✓ Ready in 2.9s
-[00:04:48.940] Browser WARN    Image with src "/img.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
