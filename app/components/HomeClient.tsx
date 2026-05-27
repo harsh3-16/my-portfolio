@@ -1,9 +1,9 @@
 "use client";
 
-import Hero from "./Hero";
+import Hero from "./HeroUltimate";
 import ProjectItem from "./ProjectItem";
 import PullToRefresh from "./ui/PullToRefresh";
-import TransitionLink from "./TransitionLink";
+import TransitionLink from "./TransitionLinkPixel";
 
 export default function HomeClient() {
     const handleRefresh = async () => {

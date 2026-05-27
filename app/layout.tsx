@@ -3,10 +3,11 @@ import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "./components/SmoothScroll";
 import Cursor from "./components/Cursor";
-import Preloader from "./components/Preloader";
+import Preloader from "./components/PreloaderUltimate";
 import FluidBackground from "./components/FluidBackground";
 import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
+import Footer from "./components/layout/FooterUltimate";
+import BackToTop from "./components/BackToTop";
 import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
@@ -37,6 +38,7 @@ export default function RootLayout({
         <Preloader />
         <Cursor />
         <FluidBackground />
+        <BackToTop />
         <Toaster
           position="bottom-right"
           toastOptions={{

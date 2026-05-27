@@ -40,10 +40,11 @@ export default function ContactClient() {
     );
 
     return (
-        <div ref={container} className="min-h-screen bg-black text-white pt-32 md:pt-48 pb-24 px-6 md:px-12 relative overflow-hidden">
+        <div ref={container} className="min-h-screen bg-transparent text-white pt-32 md:pt-48 pb-24 px-6 md:px-12 relative overflow-hidden">
 
-            {/* Background Glow */}
-            <div className="absolute top-0 left-0 w-[50vw] h-[50vh] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none -z-10 mix-blend-screen" />
+            {/* Background Glows matching Ultimate Aesthetic */}
+            <div className="absolute top-0 right-0 w-[50vw] h-[50vh] bg-indigo-900/20 blur-[120px] rounded-full pointer-events-none -z-10 mix-blend-screen" />
+            <div className="absolute bottom-0 left-0 w-[40vw] h-[40vh] bg-purple-900/20 blur-[120px] rounded-full pointer-events-none -z-10 mix-blend-screen" />
 
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 md:gap-24 relative z-10">
 
@@ -85,46 +86,50 @@ export default function ContactClient() {
 
                 {/* RIGHT SIDE: Form */}
                 <div ref={formRef} className="w-full md:w-1/2 mt-16 md:mt-0">
-                    <form className="flex flex-col gap-10 bg-neutral-900/40 p-10 md:p-14 rounded-3xl border border-white/5 backdrop-blur-md">
-                        <div className="flex flex-col gap-3">
-                            <label className="text-xs md:text-sm uppercase tracking-widest text-white/70 font-bold pl-2">Name</label>
+                    <form className="flex flex-col gap-6 bg-white/5 p-8 md:p-12 rounded-[2.5rem] border border-white/10 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+                        
+                        {/* Decorative inner glow */}
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+
+                        <div className="flex flex-col gap-2">
+                            <label className="text-xs uppercase tracking-widest text-white/50 font-bold pl-2">Name</label>
                             <input
                                 type="text"
                                 placeholder="John Doe"
-                                className="bg-transparent border-b border-white/10 pb-5 pt-3 text-xl tracking-wide focus:outline-none focus:border-white transition-colors text-white placeholder:text-neutral-700"
+                                className="w-full bg-black/20 rounded-2xl border border-white/5 p-5 text-lg tracking-wide focus:outline-none focus:border-white/30 focus:bg-white/5 transition-all text-white placeholder:text-neutral-700"
                             />
                         </div>
 
-                        <div className="flex flex-col gap-3">
-                            <label className="text-xs md:text-sm uppercase tracking-widest text-white/70 font-bold pl-2">Email</label>
+                        <div className="flex flex-col gap-2">
+                            <label className="text-xs uppercase tracking-widest text-white/50 font-bold pl-2">Email</label>
                             <input
                                 type="email"
                                 placeholder="john@example.com"
-                                className="bg-transparent border-b border-white/10 pb-5 pt-3 text-xl tracking-wide focus:outline-none focus:border-white transition-colors text-white placeholder:text-neutral-700"
+                                className="w-full bg-black/20 rounded-2xl border border-white/5 p-5 text-lg tracking-wide focus:outline-none focus:border-white/30 focus:bg-white/5 transition-all text-white placeholder:text-neutral-700"
                             />
                         </div>
 
-                        <div className="flex flex-col gap-3">
-                            <label className="text-xs md:text-sm uppercase tracking-widest text-white/70 font-bold pl-2">Subject</label>
+                        <div className="flex flex-col gap-2">
+                            <label className="text-xs uppercase tracking-widest text-white/50 font-bold pl-2">Subject</label>
                             <input
                                 type="text"
                                 placeholder="Website Redesign"
-                                className="bg-transparent border-b border-white/10 pb-5 pt-3 text-xl tracking-wide focus:outline-none focus:border-white transition-colors text-white placeholder:text-neutral-700"
+                                className="w-full bg-black/20 rounded-2xl border border-white/5 p-5 text-lg tracking-wide focus:outline-none focus:border-white/30 focus:bg-white/5 transition-all text-white placeholder:text-neutral-700"
                             />
                         </div>
 
-                        <div className="flex flex-col gap-3">
-                            <label className="text-xs md:text-sm uppercase tracking-widest text-white/70 font-bold pl-2">Message</label>
+                        <div className="flex flex-col gap-2">
+                            <label className="text-xs uppercase tracking-widest text-white/50 font-bold pl-2">Message</label>
                             <textarea
                                 rows={4}
                                 placeholder="Tell me about your project..."
-                                className="bg-transparent border-b border-white/10 pb-5 pt-3 text-xl tracking-wide focus:outline-none focus:border-white transition-colors text-white placeholder:text-neutral-700 resize-none leading-relaxed"
+                                className="w-full bg-black/20 rounded-2xl border border-white/5 p-5 text-lg tracking-wide focus:outline-none focus:border-white/30 focus:bg-white/5 transition-all text-white placeholder:text-neutral-700 resize-none leading-relaxed"
                             />
                         </div>
 
                         <button
                             type="button"
-                            className="mt-8 group relative inline-flex items-center gap-4 px-8 py-5 bg-white text-black rounded-full font-bold uppercase tracking-widest text-xs hover:bg-gray-200 transition-colors self-start overflow-hidden"
+                            className="mt-6 group relative flex items-center justify-center w-full gap-4 px-8 py-5 bg-white text-black rounded-2xl font-bold uppercase tracking-widest text-sm hover:bg-gray-200 hover:scale-[1.02] transition-all overflow-hidden"
                         >
                             <div className="relative overflow-hidden leading-none h-[1em]">
                                 <span className="block transition-transform duration-300 group-hover:-translate-y-[150%]">
@@ -134,7 +139,7 @@ export default function ContactClient() {
                                     Send Message
                                 </span>
                             </div>
-                            <div className="relative z-10 w-8 h-8 rounded-full bg-black flex items-center justify-center group-hover:rotate-45 transition-transform duration-300 ml-4">
+                            <div className="relative z-10 w-8 h-8 rounded-full bg-black flex items-center justify-center group-hover:rotate-45 group-hover:bg-indigo-600 transition-all duration-300 ml-2">
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M1 11L11 1M11 1H3.5M11 1V8.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>

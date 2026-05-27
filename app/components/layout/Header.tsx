@@ -3,7 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef, useState } from "react";
 import MagneticButtons from "../MagneticButtons";
-import TransitionLink from "../TransitionLink";
+import TransitionLink from "../TransitionLinkPixel";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
