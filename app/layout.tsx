@@ -8,6 +8,7 @@ import FluidBackground from "./components/FluidBackground";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/FooterUltimate";
 import BackToTop from "./components/BackToTop";
+import SectionBreak from "./components/ui/SectionBreak";
 import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
@@ -54,6 +55,7 @@ export default function RootLayout({
         <SmoothScroll>
           <div className="relative z-10">{children}</div>
         </SmoothScroll>
+        <SectionBreak />
         <Footer />
       </body>
     </html>

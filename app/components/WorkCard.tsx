@@ -121,12 +121,14 @@ function WorkCard({ project }: { project: any }) {
               with technical execution.
             </p>
           </div>
-          <button
-            onClick={() => setIsModalOpen(false)}
-            className="mt-4 px-6 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-full hover:bg-neutral-200 transition-colors w-fit mx-auto"
-          >
-            Close Project
-          </button>
+          <div className="mt-8 flex justify-center pb-2">
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="px-8 py-3.5 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-full hover:bg-neutral-200 hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+            >
+              Close Project
+            </button>
+          </div>
         </div>
       </Modal>
     </>

@@ -11,44 +11,7 @@ import TransitionLink from "../components/TransitionLink";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const projects = [
-  {
-    id: 1,
-    title: "Lumina",
-    category: "Web Design",
-    year: "2024",
-    src: "/img.jpg",
-  },
-  {
-    id: 2,
-    title: "Apex",
-    category: "Development",
-    year: "2023",
-    src: "/img.jpg",
-  },
-  { id: 3, title: "Mono", category: "Branding", year: "2023", src: "/img.jpg" },
-  {
-    id: 4,
-    title: "Vortex",
-    category: "Product",
-    year: "2024",
-    src: "/img.jpg",
-  },
-  {
-    id: 5,
-    title: "Ether",
-    category: "Experience",
-    year: "2022",
-    src: "/img.jpg",
-  },
-  {
-    id: 6,
-    title: "Nebula",
-    category: "Interface",
-    year: "2024",
-    src: "/img.jpg",
-  },
-];
+import { projectsData } from "../data/portfolioData";
 
 export default function WorkPage() {
   const container = useRef<HTMLDivElement>(null);
@@ -63,6 +26,15 @@ export default function WorkPage() {
         stagger: 0.05,
         duration: 1,
         ease: "power4.out",
+      });
+
+      gsap.from(".work-subtitle-char", {
+        opacity: 0,
+        y: 20,
+        stagger: 0.02,
+        duration: 0.8,
+        delay: 0.3,
+        ease: "power2.out",
       });
 
       gsap.to(col1.current, {
@@ -93,10 +65,10 @@ export default function WorkPage() {
   return (
     <main
       ref={container}
-      className="min-h-[200vh] w-full pt-32 pb-24 px-4 md:px-12"
+      className="w-full min-h-screen pt-32 pb-16 px-4 md:px-12 overflow-hidden"
     >
       {/* HEADER */}
-      <header className="mb-32 flex flex-col items-center justify-center">
+      <header className="mb-24 flex flex-col items-center justify-center">
         <h1 className="text-[15vw] font-bold font-oswald uppercase leading-[0.8] tracking-tighter text-white/50 mix-blend-overlay">
           {"WORK".split("").map((char, i) => (
             <span key={i} className="work-header-char inline-block">
@@ -104,8 +76,12 @@ export default function WorkPage() {
             </span>
           ))}
         </h1>
-        <p className="mt-8 text-neutral-400 uppercase tracking-[0.2em] text-sm animate-pulse">
-          Selected Cases (2022 — 2024)
+        <p className="mt-6 text-neutral-400 uppercase tracking-[0.2em] text-sm overflow-hidden flex flex-wrap justify-center gap-[2px]">
+          {"Selected Cases (2024 — 2025)".split("").map((char, i) => (
+            <span key={i} className="work-subtitle-char inline-block">
+              {char === " " ? "\u00A0" : char}
+            </span>
+          ))}
         </p>
       </header>
 
@@ -113,7 +89,7 @@ export default function WorkPage() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 w-full max-w-7xl mx-auto">
         {/* COLUMN 1 (Odd items) */}
         <div ref={col1} className="flex flex-col gap-12 md:gap-32">
-          {projects
+          {projectsData
             .filter((_, i) => i % 2 === 0)
             .map((project) => (
               <WorkCard key={project.id} project={project} />
@@ -122,7 +98,7 @@ export default function WorkPage() {
 
         {/* COLUMN 2 (Even items - Offset visually) */}
         <div ref={col2} className="flex flex-col gap-12 md:gap-32 md:pt-48">
-          {projects
+          {projectsData
             .filter((_, i) => i % 2 !== 0)
             .map((project) => (
               <WorkCard key={project.id} project={project} />
@@ -131,7 +107,7 @@ export default function WorkPage() {
       </div>
 
       {/* FOOTER LINK */}
-      <div className="mt-48 flex justify-center">
+      <div className="-mt-12 md:-mt-32 mb-12 flex justify-center relative z-10">
         <MagneticButtons>
           <TransitionLink
             href="/"

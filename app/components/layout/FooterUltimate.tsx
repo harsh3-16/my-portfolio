@@ -67,7 +67,7 @@ export default function FooterUltimate() {
   return (
     <footer
       ref={container}
-      className="relative w-full min-h-[80vh] bg-transparent pt-24 px-4 md:px-12 pb-8 flex flex-col justify-between mt-24 overflow-hidden"
+      className="relative w-full min-h-[80vh] bg-transparent pt-12 px-4 md:px-12 pb-8 flex flex-col justify-between overflow-hidden"
     >
       {/* TOP SECTION: BIG CTA */}
       <div className="flex flex-col items-center justify-center flex-grow relative z-10">
@@ -142,9 +142,12 @@ export default function FooterUltimate() {
 }
 
 function SocialLink({ href, label }: { href: string; label: string }) {
+  const isExternal = href.startsWith("http");
   return (
     <a
       href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       className="relative hover:text-white transition-colors duration-300"
     >
       {label}
