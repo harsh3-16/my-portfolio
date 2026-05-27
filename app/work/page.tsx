@@ -59,7 +59,7 @@ export default function WorkPage() {
         },
       });
     },
-    { scope: container }
+    { scope: container },
   );
 
   return (

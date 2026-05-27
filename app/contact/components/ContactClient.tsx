@@ -17,7 +17,7 @@ export default function ContactClient() {
     const [message, setMessage] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!name.trim() || !email.trim() || !message.trim()) {
             toast.error("Please fill in Name, Email, and Message.", {
@@ -27,26 +27,34 @@ export default function ContactClient() {
         }
 
         setIsSubmitting(true);
-        toast.loading("Preparing your message...", { id: "contact-submit" });
+        toast.loading("Sending your message...", { id: "contact-submit" });
 
-        setTimeout(() => {
-            toast.success("Opening your mail client...", { id: "contact-submit", icon: "✉️" });
-            
-            const mailtoUrl = `mailto:${personalInfo.email}?subject=${encodeURIComponent(
-                subject || "Project Collaboration Inquiry"
-            )}&body=${encodeURIComponent(
-                `Hello Harsh,\n\nMy name is ${name} (${email}).\n\n${message}\n\nBest regards,\n${name}`
-            )}`;
-            
-            window.location.href = mailtoUrl;
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ name, email, subject, message }),
+            });
+
+            if (!response.ok) {
+                throw new Error("Failed to send message.");
+            }
+
+            toast.success("Message sent successfully!", { id: "contact-submit" });
             
             // Clear form
             setName("");
             setEmail("");
             setSubject("");
             setMessage("");
+        } catch (error) {
+            console.error("Contact form error:", error);
+            toast.error("Failed to send the message. Please try again later.", { id: "contact-submit" });
+        } finally {
             setIsSubmitting(false);
-        }, 1000);
+        }
     };
 
     useGSAP(
