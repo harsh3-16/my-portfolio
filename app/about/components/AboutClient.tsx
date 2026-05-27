@@ -79,7 +79,7 @@ export default function AboutClient() {
           <p className="text-neutral-500 uppercase tracking-[0.3em] text-xs mb-8">
             The Story
           </p>
-          <h1 className="text-4xl md:text-6xl lg:text-8xl font-oswald font-bold uppercase tracking-tighter leading-[0.9] mb-8 mix-blend-difference">
+          <h1 className="text-4xl md:text-6xl lg:text-8xl font-oswald font-bold uppercase tracking-tighter leading-[0.9] mb-8">
             {personalInfo.tagline}
           </h1>
           <p className="text-gray-400 text-lg md:text-2xl max-w-3xl leading-relaxed">
@@ -128,7 +128,7 @@ export default function AboutClient() {
                 group.color === "emerald"
                   ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
                   : group.color === "sky"
-                  ? "bg-sky-500/10 text-sky-400 border-sky-500/20"
+                  ? "bg-sky-400/10 text-sky-400 border-sky-400/20"
                   : "bg-purple-500/10 text-purple-400 border-purple-500/20";
 
               const colSpan =
@@ -188,7 +188,7 @@ export default function AboutClient() {
             Experience
           </h2>
 
-          <div className="space-y-20 border-l border-white/10 pl-6 md:pl-12">
+          <div className="space-y-12 md:space-y-20 border-l border-white/10 pl-6 md:pl-12">
             {experienceData.map((job, idx) => {
               const timelineBullet =
                 job.accentColor === "emerald"
@@ -202,7 +202,8 @@ export default function AboutClient() {
 
               return (
                 <div key={job.role + job.company} className="relative">
-                  <div className={`absolute -left-[29px] md:-left-[53px] top-2 w-3 h-3 rounded-full ${timelineBullet} hidden md:block`} />
+                  {/* Timeline bullet: perfectly centered over the left border line mathematically */}
+                  <div className={`absolute -left-[28px] md:-left-[54px] top-[10px] md:top-[12px] w-2 h-2 md:w-3 md:h-3 rounded-full ${timelineBullet}`} />
                   <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-4">
                     <h3 className="text-2xl font-bold uppercase tracking-tight text-white mb-2 md:mb-0">
                       {job.role}

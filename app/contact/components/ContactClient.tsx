@@ -110,7 +110,7 @@ export default function ContactClient() {
                         </p>
                     </section>
 
-                    <div ref={infoRef} className="space-y-16 mt-12 md:mt-0">
+                    <div ref={infoRef} className="space-y-8 md:space-y-16 mt-12 md:mt-0">
                         <div className="flex flex-col gap-3">
                             <span className="text-xs md:text-sm uppercase tracking-widest text-neutral-500 font-bold">Email</span>
                             <a href={`mailto:${personalInfo.email}`} className="text-xl md:text-3xl font-light hover:text-gray-300 transition-colors tracking-wide">

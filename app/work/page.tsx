@@ -37,26 +37,31 @@ export default function WorkPage() {
         ease: "power2.out",
       });
 
-      gsap.to(col1.current, {
-        y: -100,
-        ease: "none",
-        scrollTrigger: {
-          trigger: container.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 1,
-        },
-      });
+      // Only enable parallax on desktop screen sizes (768px and above)
+      ScrollTrigger.matchMedia({
+        "(min-width: 768px)": function() {
+          gsap.to(col1.current, {
+            y: -100,
+            ease: "none",
+            scrollTrigger: {
+              trigger: container.current,
+              start: "top top",
+              end: "bottom bottom",
+              scrub: 1,
+            },
+          });
 
-      gsap.to(col2.current, {
-        y: -250,
-        ease: "none",
-        scrollTrigger: {
-          trigger: container.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 1,
-        },
+          gsap.to(col2.current, {
+            y: -250,
+            ease: "none",
+            scrollTrigger: {
+              trigger: container.current,
+              start: "top top",
+              end: "bottom bottom",
+              scrub: 1,
+            },
+          });
+        }
       });
     },
     { scope: container },
@@ -69,7 +74,7 @@ export default function WorkPage() {
     >
       {/* HEADER */}
       <header className="mb-24 flex flex-col items-center justify-center">
-        <h1 className="text-[15vw] font-bold font-oswald uppercase leading-[0.8] tracking-tighter text-white/50 mix-blend-overlay">
+        <h1 className="text-[15vw] font-bold font-oswald uppercase leading-[0.8] tracking-tighter text-white/30 mix-blend-screen">
           {"WORK".split("").map((char, i) => (
             <span key={i} className="work-header-char inline-block">
               {char}

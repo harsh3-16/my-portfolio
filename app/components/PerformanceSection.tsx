@@ -128,7 +128,7 @@ export default function PerformanceSection() {
                 <div 
                     ref={(el) => { cardsRef.current[0] = el; }}
                     onMouseMove={(e) => handleMouseMove(e, 0)}
-                    className="group relative h-80 rounded-2xl bg-[#111] border border-white/10 overflow-hidden flex flex-col justify-between p-8"
+                    className="group relative min-h-80 rounded-2xl bg-[#111] border border-white/10 overflow-hidden flex flex-col justify-between p-8"
                 >
                     <div className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100" style={{
                         background: `radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(16, 185, 129, 0.15), transparent 40%)`
@@ -154,7 +154,7 @@ export default function PerformanceSection() {
                 <div 
                     ref={(el) => { cardsRef.current[1] = el; }}
                     onMouseMove={(e) => handleMouseMove(e, 1)}
-                    className="group relative h-80 rounded-2xl bg-[#111] border border-white/10 overflow-hidden flex flex-col justify-between p-8"
+                    className="group relative min-h-80 rounded-2xl bg-[#111] border border-white/10 overflow-hidden flex flex-col justify-between p-8"
                 >
                     <div className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100" style={{
                         background: `radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(56, 189, 248, 0.15), transparent 40%)`
@@ -179,7 +179,7 @@ export default function PerformanceSection() {
                 <div 
                     ref={(el) => { cardsRef.current[2] = el; }}
                     onMouseMove={(e) => handleMouseMove(e, 2)}
-                    className="group relative h-80 rounded-2xl bg-[#111] border border-white/10 overflow-hidden flex flex-col justify-between p-8"
+                    className="group relative min-h-80 rounded-2xl bg-[#111] border border-white/10 overflow-hidden flex flex-col justify-between p-8"
                 >
                     <div className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100" style={{
                         background: `radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(168, 85, 247, 0.15), transparent 40%)`

@@ -47,7 +47,7 @@ function WorkCard({ project }: { project: any }) {
         onClick={handleOpenModal}
         className="group cursor-pointer w-full"
       >
-        <div className="relative overflow-hidden aspect-[3/4] mb-6 rounded-md">
+        <div className="relative overflow-hidden aspect-[3/4] md:aspect-[4/5] mb-6 rounded-md">
           {/* SKELETON LAYER: Shows while image loads */}
           {!imageLoaded && (
             <Skeleton className="absolute inset-0 z-10 w-full h-full" />
@@ -115,10 +115,7 @@ function WorkCard({ project }: { project: any }) {
               <span className="uppercase">{project.category}</span>
             </div>
             <p className="text-neutral-300 leading-relaxed font-light">
-              This is a curated showcase for {project.title}. Designed with a
-              focus on deep interactive principles and seamless motion, it
-              embodies the raw digital aesthetic that bridges creative design
-              with technical execution.
+              {project.description}
             </p>
           </div>
           <div className="mt-8 flex justify-center pb-2">

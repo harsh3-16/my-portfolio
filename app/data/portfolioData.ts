@@ -5,6 +5,7 @@ export interface Project {
   year: string;
   src: string;
   featured?: boolean;
+  description: string;
 }
 
 export interface SkillGroup {
@@ -145,6 +146,7 @@ export const projectsData: Project[] = [
     year: "2025",
     src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
     featured: true,
+    description: "A comprehensive administrative dashboard designed for real-time data monitoring and deep analytics. Engineered with advanced state management to ensure optimal rendering efficiency and featuring highly customizable interactive charts, real-time metrics tracking, and role-based access configurations.",
   },
   {
     id: 2,
@@ -153,6 +155,7 @@ export const projectsData: Project[] = [
     year: "2025",
     src: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=1200",
     featured: true,
+    description: "A fast, fully optimized custom Shopify storefront developed with Liquid and Online Store 2.0 architecture. Features custom section components, flexible collection layouts, fluid product transitions, and an optimized checkout experience built for maximum conversions and responsive usability.",
   },
   {
     id: 3,
@@ -161,6 +164,7 @@ export const projectsData: Project[] = [
     year: "2025",
     src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200",
     featured: true,
+    description: "A dynamic software-as-a-service application developed to simplify complex logistics pipelines. Integrates secure REST APIs for tracking shipments in real time, managing dynamic route plans, allocating warehouse cargo efficiently, and rendering predictive logistics analytics panels.",
   },
   {
     id: 4,
@@ -169,6 +173,7 @@ export const projectsData: Project[] = [
     year: "2024",
     src: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200",
     featured: false,
+    description: "A highly responsive, premium messaging application interface focusing on micro-interactions and smooth layout shifts. Features custom chat structures, responsive sidebar panels, real-time message state indicators, and an extensive custom iconography toolkit.",
   },
   {
     id: 5,
@@ -177,6 +182,7 @@ export const projectsData: Project[] = [
     year: "2024",
     src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1200",
     featured: false,
+    description: "A patient-centric portal interface built for accessible, secure medical scheduling and telehealth consultations. Stresses color contrast standards, key screen-reader elements, easy-to-use booking cards, and intuitive dashboard navigations for users of all abilities.",
   },
   {
     id: 6,
@@ -185,6 +191,7 @@ export const projectsData: Project[] = [
     year: "2024",
     src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
     featured: false,
+    description: "An operational relationship management SaaS built in React to organize complex client interactions and project lifecycles. Supports customizable contact databases, interactive pipelines, activity loggers, automated milestone emails, and granular visual metrics.",
   },
 ];
 

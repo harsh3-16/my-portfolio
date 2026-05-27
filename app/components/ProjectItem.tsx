@@ -131,7 +131,7 @@ export default function ProjectItem({ title, category, src }: Props) {
       ref={container}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="group relative flex flex-col md:flex-row items-center gap-10 py-20 cursor-pointer"
+      className="group relative flex flex-col md:flex-row items-center gap-10 py-12 md:py-20 cursor-pointer"
     >
       <div
         ref={line}

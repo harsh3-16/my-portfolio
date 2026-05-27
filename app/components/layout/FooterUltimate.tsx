@@ -78,7 +78,7 @@ export default function FooterUltimate() {
         <div className="flex justify-center w-full">
           <MagneticButtons>
             <Link href="/contact" className="group flex justify-center cursor-pointer">
-              <div ref={textRef} className="relative inline-block py-2 overflow-hidden flex perspective-[1000px]">
+              <div ref={textRef} className="relative py-2 overflow-hidden flex" style={{ perspective: "1000px" }}>
                 {headingText.split("").map((char, index) => (
                   <span 
                     key={index} 

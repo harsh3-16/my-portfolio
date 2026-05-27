@@ -50,7 +50,6 @@ export default function HomeClient() {
                         </TransitionLink>
                     </div>
 
-                    <SectionBreak />
                     <PerformanceSection />
                 </section>
             </main>
