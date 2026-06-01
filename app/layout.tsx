@@ -34,7 +34,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` ${inter.variable} ${oswald.variable} font-sans antialiased bg-[#0a0a0a] text-[#f0f0f0]`}
+        className={` ${inter.variable} ${oswald.variable} antialiased bg-[#0a0a0a] text-[#f0f0f0]`}
+        style={{ fontFamily: "var(--font-inter), sans-serif" }}
       >
         <Preloader />
         <Cursor />

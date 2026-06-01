@@ -6,6 +6,8 @@ export interface Project {
   src: string;
   featured?: boolean;
   description: string;
+  liveUrl?: string;
+  githubUrl?: string;
 }
 
 export interface SkillGroup {
@@ -41,17 +43,17 @@ export interface CertificationItem {
 
 export const personalInfo = {
   name: "Harsh Arora",
-  title: "Frontend Developer",
+  title: "Full-Stack Developer",
   email: "harshdhruv099@gmail.com",
   phone: "+91 8076253102",
   location: "Ghaziabad, India",
-  tagline: "I assemble high-performance web applications.",
+  tagline: "I build scalable full-stack systems and premium web experiences.",
   aboutHero:
-    "Frontend Developer with over 1 year of experience specializing in building responsive web applications and Shopify storefronts. I leverage modern architecture and AI-assisted workflows to create scalable, user-centric, and secure digital experiences.",
+    "Full-Stack Developer with 1.5+ years of experience shipping production systems across healthcare, logistics, fintech, and e-commerce. I work across the entire stack — from React frontends and Node.js APIs to real-time systems and payment integrations — and use AI tools like Claude and Cursor to ship faster without cutting corners.",
   heroText: {
     available: "Available for Work",
     aboutShort:
-      "Specializing in high-performance web architecture, fluid animations, and premium digital experiences.",
+      "Specializing in full-stack web development, real-time systems, and premium frontend experiences.",
   },
 };
 
@@ -60,66 +62,79 @@ export const skillsData: SkillGroup[] = [
     title: "Frontend Architecture",
     badge: "Client-Side Speed",
     description:
-      "Developing highly fluid, beautiful user experiences and pixel-perfect interactive layouts.",
+      "Building highly fluid, responsive user interfaces with modern React patterns and animation libraries.",
     color: "emerald",
     items: [
       "React.js",
       "Next.js",
-      "HTML5 & CSS3",
+      "TypeScript",
       "Tailwind CSS",
       "Material UI",
       "Redux Toolkit",
+      "Framer Motion",
+      "GSAP",
     ],
   },
   {
-    title: "Backend & DevOps",
+    title: "Backend & APIs",
     badge: "Scalable Systems",
     description:
-      "Architecting robust, secure server layers, performance testing, and secure cloud environments.",
+      "Architecting robust, secure server layers with real-time capabilities and third-party integrations.",
     color: "sky",
     items: [
       "Node.js",
       "Express.js",
-      "RESTful APIs",
-      "Git & GitHub",
-      "Postman",
-      "Vercel & AWS",
+      "REST APIs",
+      "Socket.io",
+      "JWT & bcrypt",
+      "Razorpay",
+      "Google OAuth",
+      "AWS S3",
     ],
   },
   {
-    title: "Specialized Tools",
+    title: "Databases & Tools",
     badge: "Modern Workflows",
     description:
-      "Accelerating deployment rates and storefront customizability with modern automated tools.",
+      "Managing data across multiple database systems and accelerating delivery with AI-assisted workflows.",
     color: "purple",
-    items: ["Shopify Liquid", "Cursor & AI", "MCP Servers", "MongoDB", "MySQL"],
+    items: [
+      "MongoDB",
+      "PostgreSQL",
+      "MySQL",
+      "Supabase",
+      "Shopify Liquid",
+      "Claude & Cursor",
+      "Git & GitHub",
+      "Vercel",
+    ],
   },
 ];
 
 export const experienceData: Job[] = [
   {
-    role: "Frontend Developer",
-    company: "Cling InfoTech Works Pvt Ltd",
+    role: "Full-Stack Developer",
+    company: "Cling InfoTech Works Private Limited",
     location: "Ghaziabad, India",
     period: "Feb 2025 – Present",
     accentColor: "emerald",
     bullets: [
-      "Engineered responsive dashboards and business web solutions using React.js and Material UI, resulting in a 30% boost in development lifecycle efficiency.",
-      "Optimized application performance by implementing advanced state management with Redux Toolkit and Context API, reducing UI latency by 40%.",
-      "Architected mobile-first Shopify storefronts using Liquid and OS 2.0, enhancing user engagement and mobile usability by 25%.",
-      "Streamlined data integration processes by developing robust REST APIs and third-party service connections, ensuring 35% higher data reliability.",
-      "Leveraged AI-assisted workflows to accelerate the implementation of payment gateways and automated messaging services.",
-      "Spearheaded the design of modular, reusable components to ensure cross-project scalability and long-term maintainability.",
+      "Contributed to 15+ client projects — simultaneously managing 3+ active projects spanning healthcare, logistics, fintech, e-commerce, and education.",
+      "Delivered 3 backend systems covering API design, authentication, business logic, real-time features, and deployment.",
+      "Progressed from feature contributor under senior guidance to primary developer on full applications within 11 months.",
+      "Built and customized Shopify storefronts using Liquid, metafields, and Online Store 2.0 — live at arkadesign.co.in and shikkis.in.",
     ],
   },
   {
     role: "Project Coordinator",
-    company: "Fluper Ltd",
+    company: "Fluper Limited",
     location: "Noida, India",
     period: "Aug 2024 – Jan 2025",
     accentColor: "neutral",
     bullets: [
-      "Orchestrated project timelines and cross-functional stakeholder communication, ensuring timely delivery of milestones through rigorous Agile methodologies.",
+      "Managed delivery timelines across multi-platform client applications.",
+      "Bridged communication between stakeholders and development teams for accurate requirement gathering.",
+      "Drove team productivity through Agile methodologies across full project cycles.",
     ],
   },
 ];
@@ -141,57 +156,68 @@ export const certificationData: CertificationItem = {
 export const projectsData: Project[] = [
   {
     id: 1,
-    title: "Apex Dashboard",
-    category: "Data Analytics / Admin",
-    year: "2025",
-    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1200",
+    title: "Théorème Ltée",
+    category: "Web Development / Animation",
+    year: "2026",
+    src: "/projects/theoreme.png",
     featured: true,
-    description: "A comprehensive administrative dashboard designed for real-time data monitoring and deep analytics. Engineered with advanced state management to ensure optimal rendering efficiency and featuring highly customizable interactive charts, real-time metrics tracking, and role-based access configurations.",
+    liveUrl: "https://theoreme-ltee.vercel.app",
+    description:
+      "Production website for a regulated private finance house in Mauritius, authorized by the Financial Services Commission and Bank of Mauritius. Built independently with Next.js including custom GSAP scroll animations, Lenis smooth scroll, and seamless page transitions.",
   },
   {
     id: 2,
-    title: "Cling E-Store",
-    category: "E-Commerce / Shopify Liquid",
+    title: "Collaborative Task Manager",
+    category: "Full-Stack / Real-Time",
     year: "2025",
-    src: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&q=80&w=1200",
+    src: "/projects/ctm.png",
     featured: true,
-    description: "A fast, fully optimized custom Shopify storefront developed with Liquid and Online Store 2.0 architecture. Features custom section components, flexible collection layouts, fluid product transitions, and an optimized checkout experience built for maximum conversions and responsive usability.",
+    liveUrl: "https://ctm-eight.vercel.app",
+    githubUrl: "https://github.com/harsh3-16/CTM",
+    description:
+      "Full-stack real-time task manager with Socket.io personal user rooms for targeted notifications. JWT authentication with bcrypt, Zod validation on both frontend and backend, Controller-Service-Repository architecture, and 23+ backend tests.",
   },
   {
     id: 3,
-    title: "Logix Portal",
-    category: "Logistics SaaS / REST APIs",
+    title: "Vetrina Admin",
+    category: "Frontend / E-Commerce",
     year: "2025",
-    src: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200",
+    src: "/projects/vetrina.png",
     featured: true,
-    description: "A dynamic software-as-a-service application developed to simplify complex logistics pipelines. Integrates secure REST APIs for tracking shipments in real time, managing dynamic route plans, allocating warehouse cargo efficiently, and rendering predictive logistics analytics panels.",
+    description:
+      "E-commerce admin dashboard with real-time analytics, revenue charts, and complex product catalog management featuring GST breakdown and dual rating systems. Includes inventory allocation across POD locations, order fulfillment workflows, and coupon campaign management.",
   },
   {
     id: 4,
-    title: "Vortex App",
-    category: "UI Design / Messaging Platform",
-    year: "2024",
-    src: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=1200",
+    title: "Cutec",
+    category: "Full-Stack / Healthcare",
+    year: "2025",
+    src: "/projects/cutec.png",
     featured: false,
-    description: "A highly responsive, premium messaging application interface focusing on micro-interactions and smooth layout shifts. Features custom chat structures, responsive sidebar panels, real-time message state indicators, and an extensive custom iconography toolkit.",
+    description:
+      "Medicine delivery platform for a live client. Complete order lifecycle across 5 user roles — VisitPlan to Quotation to Order to Delivery. Real-time Socket.io order tracking, geolocation-based visit verification with 500m radius enforcement, and role-filtered analytics dashboards.",
   },
   {
     id: 5,
-    title: "CareFlow Health",
-    category: "Healthcare UI / Frontend",
-    year: "2024",
-    src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1200",
+    title: "Cargo HR",
+    category: "Full-Stack / Logistics",
+    year: "2025",
+    src: "/projects/cargohr.png",
     featured: false,
-    description: "A patient-centric portal interface built for accessible, secure medical scheduling and telehealth consultations. Stresses color contrast standards, key screen-reader elements, easy-to-use booking cards, and intuitive dashboard navigations for users of all abilities.",
+    description:
+      "Employee attendance and HR management system for a logistics company. Geolocation-based punch-in/out with late arrival detection, overtime calculation beyond 9 hours, automatic cross-day shift handling, and configurable geofencing per branch office.",
   },
   {
     id: 6,
-    title: "Fluper CRM",
-    category: "Management SaaS / React",
-    year: "2024",
-    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    title: "ablespace",
+    category: "Full-Stack / Data",
+    year: "2025",
+    src: "/projects/ablespace.png",
     featured: false,
-    description: "An operational relationship management SaaS built in React to organize complex client interactions and project lifecycles. Supports customizable contact databases, interactive pipelines, activity loggers, automated milestone emails, and granular visual metrics.",
+    liveUrl: "https://ablespace-cyan.vercel.app",
+    githubUrl: "https://github.com/harsh3-16/ablespace",
+    description:
+      "On-demand product data explorer powered by live web scraping. Crawlee and Playwright fetch real product data cached in PostgreSQL with 24-hour TTL. Ethical scraping with rate limiting, exponential backoff, robots.txt compliance, and source deduplication.",
   },
 ];
 
